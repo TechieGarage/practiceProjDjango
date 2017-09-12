@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/another.css' %}" >
+
+<h1> Here are your users </h1>
+
+{% if usersData %}
+	{% for userItem in usersData %}
+		<p> User Info </p>
+		<ul>
+			<li> First Name: {{ userItem.fname }} </li>
+			<li> Last Name: {{ userItem.lname }} </li>
+			<li> Email: {{ userItem.myEmail }} </li>
+		</ul>
+	{% endfor %}
+{% endif %}
+

@@ -8,6 +8,7 @@ django.setup()
 import random
 from firstApp.models import Topic, Webpage, AccessRecord
 from faker import Faker
+from users.models import MyUsers
 
 fakegen = Faker()
 topics = ['Search', 'Social', 'Marketplace', 'News', 'Games']
@@ -35,8 +36,19 @@ def populate(N=5):
 
 
 
+def userDataPopulate(N):
+    for item in range(N):
+        fakeFname = fakegen.name()
+        fakeLname = fakegen.name()
+        fakeEmail = fakegen.email()
+
+        t = MyUsers.objects.get_or_create(fname=fakeFname, lname=fakeLname, myEmail=fakeEmail)[0]
+        t.save()
+
+
+
 if __name__ == '__main__':
     print('Populating script!')
-    populate(20)
+    #populate(20)
+    userDataPopulate(10)
     print('Populating complete!')
-
