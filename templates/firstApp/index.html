@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/another.css' %}" >
+
+<h1> Hi, Welcome to Home page of django project. </h1>
+<h3> Here is your access records </h3>
+<div class="djangotwo">
+    {% if access_records %}
+    <table>
+        <thead>
+        	<th>Site name</th>
+            <th>Date Accessed</th>
+        </thead>
+        {% for record in access_records %}
+        <tr>
+    		<td> {{ record.name }} </td>
+        	<td> {{ record.date }} </td>
+    	{% endfor %}
+        </tr>
+    </table>
+    {% else %}
+    	<p> NO ACCESS RECORD FOUND! </p>
+    {% endif %}
+
+</div>
+<!-- img src="{% static 'images/flower.jpg' %}" alt="flower.jpg" / -->
