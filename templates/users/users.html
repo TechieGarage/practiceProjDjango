@@ -4,13 +4,15 @@
 <h1> Here are your users </h1>
 
 {% if usersData %}
+	<ol>
 	{% for userItem in usersData %}
-		<p> User Info </p>
+		<li> User Info </li>
 		<ul>
 			<li> First Name: {{ userItem.fname }} </li>
 			<li> Last Name: {{ userItem.lname }} </li>
 			<li> Email: {{ userItem.myEmail }} </li>
 		</ul>
 	{% endfor %}
+    </ol>
 {% endif %}
 
