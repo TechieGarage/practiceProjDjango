@@ -38,8 +38,9 @@ def populate(N=5):
 
 def userDataPopulate(N):
     for item in range(N):
-        fakeFname = fakegen.name()
-        fakeLname = fakegen.name()
+        fakename = fakegen.name().split()
+        fakeFname = fakename[0]
+        fakeLname = fakename[1]
         fakeEmail = fakegen.email()
 
         t = MyUsers.objects.get_or_create(fname=fakeFname, lname=fakeLname, myEmail=fakeEmail)[0]
