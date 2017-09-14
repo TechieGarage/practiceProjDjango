@@ -3,6 +3,7 @@
 
 {% block body_block %}
     <h1>Welcome to index</h1>
-    <h3>Go to /basic_app/relative for other pages' link, or click below link</h3>
+    <h3> {{ text | title}} </h3>
+	<h3> {{ number | add:'25'}} </h3>
     <a href="{% url 'basic_app:relative' %}">Relative</a>
 {% endblock %}
