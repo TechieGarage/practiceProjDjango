@@ -25,7 +25,7 @@ SECRET_KEY = 'nmvpg$y_f%(fk#n_98e0m_s5scv-%6%_g7kms6%+^0z=(z78u)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3fr4k8wa.apps.lair.io']
 
 
 # Application definition
