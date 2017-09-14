@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Welcome to Relative Url Templates</h1>
+    <a href="{% url 'basic_app:other' %}"> Other </a> <br /><!-- Note: don't leave any space like ' basic_app:other' -->
+    <a href="{% url 'admin:index' %}">Admin</a><br />
+    <a href="{% url 'index' %}"> Index page </a> <!--since index's url is present in main project urls, we don't need app_name namespace -->
+  </body>
+</html>
