@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% extends 'basic_app/base.html' %}
-
+{% load my_extras %}
 {% block body_block %}
     <h1>Welcome to index</h1>
-    <h3> {{ text | title}} </h3>
+    <h3> {{ text | cutFilter1:"hello"}} </h3>
 	<h3> {{ number | add:'25'}} </h3>
     <a href="{% url 'basic_app:relative' %}">Relative</a>
 {% endblock %}
