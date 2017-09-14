@@ -27,8 +27,8 @@ SECRET_KEY = ')0bpw@j#^l=l7z#ggxhdxes3s&f55gx+t$=im&mk1vn_a&lm@z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3fr4k8wa.apps.lair.io']
-
+#ALLOWED_HOSTS = ['3fr4k8wa.apps.lair.io']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -138,3 +138,4 @@ STATICFILES_DIR = [STATIC_DIR,]
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+LOGIN_URL = 'basic_app/user_login'
