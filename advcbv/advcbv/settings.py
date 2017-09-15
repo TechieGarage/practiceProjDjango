@@ -25,7 +25,7 @@ SECRET_KEY = 'omoq=6b*_*535l$oeawqdl5ng0_1iw!c)chlf%5@a3_ndbha&l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3fr4k8wa.apps.lair.io']
 
 
 # Application definition
