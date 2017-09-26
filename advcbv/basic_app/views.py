@@ -23,8 +23,10 @@ class IndexView(TemplateView):
 
 class SchoolListView(ListView):
     context_object_name = 'schools'  # default : modelName.lower()_list, Eg: school_list
-    model = models.School
-
+    # queryset = School.objects.all() ---> can be used for getting specific information
+    model = models.School  # shorthand of above line. refer documentation
+    # We can use "template_name" to specify template name, default: modelName.lower()_list.html 
+    
 class SchoolDetailView(DetailView):
     context_object_name = 'school_detail'  # default : modelName.lower(), Eg: school
     model = models.School
