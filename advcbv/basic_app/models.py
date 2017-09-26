@@ -10,7 +10,7 @@ class School(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):    # to redirect to detail page after creating new school
+    def get_absolute_url(self):    # to redirect to detail page after creating/updating school
         return reverse('basic_app:detail', kwargs={'pk':self.pk})
 
 class Student(models.Model):
@@ -20,19 +20,3 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

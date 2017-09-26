@@ -26,8 +26,8 @@ class SchoolListView(ListView):
     # queryset = School.objects.all() ---> can be used for getting specific information.
     # we can use get_queryset() method for dynamic filtering. Check docs.
     model = models.School  # shorthand of "queryset = School.objects.all()". refer documentation
-    # We can use "template_name" to specify template name, default: modelName.lower()_list.html 
-    
+    # We can use "template_name" to specify template name, default: modelName.lower()_list.html
+
 class SchoolDetailView(DetailView):
     context_object_name = 'school_detail'  # default : modelName.lower(), Eg: school
     model = models.School
@@ -37,15 +37,21 @@ class SchoolCreateView(CreateView):
     fields = ('name', 'principal', 'location')
     model = models.School
     # Default template_name would be "modelName.lower()_form.html". ie; school_form.html. Check error msg before creating the template.
+    # Default context_object_name : "form"
 
 class SchoolUpdateView(UpdateView):
     fields = ('name', 'principal')
     model = models.School
+    # Same template will be used which is for CreateView. ie; school_form.html
+    # Default context_object_name : "form"
 
 class SchoolDeleteView(DeleteView):
     model = models.School
     success_url = reverse_lazy('basic_app:list')
+    # Default context_object_name is "modelName.lower()". ie; school
+    # Default template : "modelName.lower()_confirm_delete.html". ie; school_confirm_delete.html
 
 
-
-
+# Note: In CreateView and UpdateView we don't need success_url because get_absolute_url() is there in
+#       the model to redirect, but when we delete a object we won't have get_absolute_url() method, so
+#       DeleteView needs a success_url.
