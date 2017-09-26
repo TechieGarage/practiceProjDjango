@@ -36,6 +36,7 @@ class SchoolDetailView(DetailView):
 class SchoolCreateView(CreateView):
     fields = ('name', 'principal', 'location')
     model = models.School
+    # Default template_name would be "modelName.lower()_form.html". ie; school_form.html. Check error msg before creating the template.
 
 class SchoolUpdateView(UpdateView):
     fields = ('name', 'principal')
