@@ -23,8 +23,9 @@ class IndexView(TemplateView):
 
 class SchoolListView(ListView):
     context_object_name = 'schools'  # default : modelName.lower()_list, Eg: school_list
-    # queryset = School.objects.all() ---> can be used for getting specific information
-    model = models.School  # shorthand of above line. refer documentation
+    # queryset = School.objects.all() ---> can be used for getting specific information.
+    # we can use get_queryset() method for dynamic filtering. Check docs.
+    model = models.School  # shorthand of "queryset = School.objects.all()". refer documentation
     # We can use "template_name" to specify template name, default: modelName.lower()_list.html 
     
 class SchoolDetailView(DetailView):
