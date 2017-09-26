@@ -55,3 +55,6 @@ class SchoolDeleteView(DeleteView):
 # Note: In CreateView and UpdateView we don't need success_url because get_absolute_url() is there in
 #       the model to redirect, but when we delete a object we won't have get_absolute_url() method, so
 #       DeleteView needs a success_url.
+
+# Make sure to use pk with url when using DetailView, UpdateView and DeleteView because
+# we need a particular object in these cases.
