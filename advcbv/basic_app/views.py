@@ -37,13 +37,13 @@ class SchoolCreateView(CreateView):
     fields = ('name', 'principal', 'location')
     model = models.School
     # Default template_name would be "modelName.lower()_form.html". ie; school_form.html. Check error msg before creating the template.
-    # Default context_object_name : "form"
+    # Default form object name : "form". We can also use a custome form instead of generating form with this model.
 
 class SchoolUpdateView(UpdateView):
     fields = ('name', 'principal')
     model = models.School
     # Same template will be used which is for CreateView. ie; school_form.html
-    # Default context_object_name : "form"
+    # Default form object name : "form".
 
 class SchoolDeleteView(DeleteView):
     model = models.School
